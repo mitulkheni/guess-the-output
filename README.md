@@ -4,7 +4,7 @@ A tiny JavaScript quiz that A/B tests its own start screen with **Flagsmith Expe
 
 Built for **Toggle Wars: The Flagsmith Experimentation Hackathon** (WeMakeDevs, Nov 26–29, 2026), **Track 01: Test Something Real**.
 
-**Live app:** _add your GitHub Pages URL here_ · **Demo video:** _add link here_
+**Live app:** https://mitulkheni.github.io/guess-the-output/ · **Demo video:** _add link here_
 
 ---
 
@@ -78,6 +78,10 @@ FLAGSMITH_ENVIRONMENT_ID=<development client-side key> npm run simulate -- --use
 You can also run it from GitHub: **Actions → Simulate traffic (Development) → Run workflow**. It only ever uses the Development key, so simulated visitors never mix with the real experiment in Production.
 
 ## Results
+
+**Pipeline check (simulated, Development environment, Nov 24):** 300 simulated visitors were all enrolled (141 control, 159 sample_question), and Flagsmith's results page matched the simulator's own tally exactly. This only proves the instrumentation works; the made-up rates in the simulator are not results.
+
+**Real experiment (Production):**
 
 _To be filled in at the end of the hackathon from the experiment's results page in Flagsmith: visitors enrolled per variation, start rate, lift, chance to be best, and what we rolled out._
 
