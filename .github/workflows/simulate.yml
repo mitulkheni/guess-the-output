@@ -1,0 +1,27 @@
+name: Simulate traffic (Development)
+
+# Sends simulated visitors to the DEVELOPMENT environment only, so the
+# Production experiment keeps real visitors only.
+on:
+  workflow_dispatch:
+    inputs:
+      users:
+        description: Number of simulated visitors
+        required: true
+        default: '300'
+
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Simulate visitors
+        run: node scripts/simulate.mjs --users "$USERS"
+        env:
+          USERS: ${{ inputs.users }}
+          FLAGSMITH_ENVIRONMENT_ID: ${{ vars.FLAGSMITH_DEV_ENVIRONMENT_ID }}

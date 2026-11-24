@@ -1,0 +1,20 @@
+{
+  "name": "guess-the-output",
+  "version": "1.0.0",
+  "description": "A JavaScript quiz that A/B tests its own start screen with Flagsmith Experimentation",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "simulate": "node scripts/simulate.mjs"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@flagsmith/flagsmith": "^12.6.0"
+  },
+  "devDependencies": {
+    "vite": "^6.4.6"
+  },
+  "private": true,
+  "type": "module"
+}
